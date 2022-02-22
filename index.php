@@ -19,7 +19,6 @@
         $result = number_format(($precoetanol / $precogasolina), 2, '.','');
 
             if ($result <= 0.73){
-                //echo ($result." - Alcool melhor");
                 echo ("
                 <div class='row text-center'>
                     <div class='alert alert-primary' role='alert'>".$result." - Alcool melhor</div>
@@ -27,7 +26,6 @@
                 ");
 
             }else{
-                //echo ($result." - Gasolina Melhor");
                 echo ("
                 <div class='row text-center'>
                     <div class='alert alert-primary' role='alert'>".$result." - Gasolina melhor</div>

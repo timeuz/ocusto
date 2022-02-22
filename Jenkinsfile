@@ -8,13 +8,6 @@ pipeline {
             }
         }
         
-        stage('Docker Install'){
-            steps {
-                sh "apt-get update"
-                sh "if ! dpkg-query -W -f='${Status}' docker  | grep 'ok installed'; then apt install docker -y; fi"
-            }
-        }
-
         stage('Build Image'){
             steps{
                 script{

@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Source'){
-            steps{
-                git url:'https://github.com/heathz/ocusto.git' branch:'main'
+        stage('Checkout Source') {
+            steps {
+                git url:'https://github.com/heathz/ocusto.git', branch:'main'
             }
         }
 

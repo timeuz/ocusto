@@ -2,9 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Source') {
+        stage('Source') {
             steps {
                 git url:'https://github.com/heathz/ocusto.git', branch:'main'
+            }
+        }
+        
+        stage('Docker Install'){
+            steps {
+                sh "apt-get update"
+                sh "if ! dpkg-query -W -f='${Status}' docker  | grep 'ok installed'; then apt install docker -y; fi"
             }
         }
 

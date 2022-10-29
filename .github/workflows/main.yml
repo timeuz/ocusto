@@ -1,0 +1,14 @@
+name: "Deploy via URL"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-updater:
+    runs-on: ubuntu-latest
+    steps:
+    - name: URL da api do Qoddi
+      run: |
+        curl -X GET "https://api.qoddi.com/push/?key=rf9ohpy28v7tck1la3n5iqbw6dx4gzmsjeu"

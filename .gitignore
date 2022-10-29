@@ -3,3 +3,4 @@ Dockerfile
 index.php
 Jenkinsfile
 .dockerignore
+__pycache__

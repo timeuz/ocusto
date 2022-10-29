@@ -1,6 +1,2 @@
-2do
-Dockerfile
-index.php
-Jenkinsfile
-.dockerignore
 __pycache__
+2do

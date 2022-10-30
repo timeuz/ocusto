@@ -6,21 +6,6 @@
         <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
         <title>Conversão Combustível</title>
         <meta charset="UTF-8">
-        <script>
-            function verifique(event) {
-                const key = event.which || event.keyCode
-                if (event.key === '.') {
-                    console.log(key)
-                    return
-                }
-                if (key >= 48 && key <= 57) {
-                    console.log(key)
-                    return
-                }
-                console.log('invalid key')
-                return "invalid key"
-            }
-        </script>
     </head>
     <body>
         <div class="container-fluid">
@@ -53,9 +38,9 @@
                     
                     <form action="#" class="needs-validation" method="POST">
                         <label for="etanol" class="form-label">Preço do Etanol:</label><br />
-                        <input type="text" class="form-control-lg" name="etanol" id="teste" required onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.key === '.'" /><br />
+                        <input type="text" class="form-control-lg" name="etanol" required onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.key === '.'" /><br />
                         <label for="gasolina" class="form-label">Preço da Gasolina:</label><br />
-                        <input type="text" class="form-control-lg" name="gasolina" required onkeypress="verifique(event)" /><br /><br />
+                        <input type="text" class="form-control-lg" name="gasolina" required onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.key === '.'" /><br /><br />
                         <input type="submit" class="btn btn-success" value="Calcular"/>
                     </form>
                 </div>

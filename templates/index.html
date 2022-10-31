@@ -6,6 +6,11 @@
         <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
         <title>Conversão Combustível</title>
         <meta charset="UTF-8">
+        <style>
+            body {background-color: black;}
+            div   {color: white;}
+            p    {color: white;}
+        </style>
     </head>
     <body>
         <div class="container-fluid">
@@ -15,9 +20,9 @@
                     <div class="col-12 text-center">
                         <p>
                             {% if result <= comp: -%}
-                            <div class="alert alert-success">{{result}} - Álcool é melhor</div>
+                            <div class="alert alert-success">Razão: {{result}} - Álcool é melhor</div>
                             {% else: -%}
-                            <div class="alert alert-success">{{result}} - Gasolina é melhor</div>
+                            <div class="alert alert-success">Razão: {{result}} - Gasolina é melhor</div>
                             {% endif %}
                         </p>
                     </div>
@@ -27,7 +32,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <p>Digite nos campos abaixo os preços do Etanaol e da Gasolina.</p>
-                        <p><span style="color: red;"><strong>NÃO</strong></span> utilize <span style="color: red;"><strong>LETRAS</strong> <span style="color: black;">ou</span> <span style="color: red;"><strong>VÍRGULA!</strong></p>
+                        <p><span style="color: red;"><strong>NÃO</strong></span> utilize <span style="color: red;"><strong>LETRAS</strong> <span style="color: white;">ou</span> <span style="color: red;"><strong>VÍRGULA!</strong></p>
                     </div>
                 </div>
                 <div class="row">&nbsp;</div>
@@ -38,9 +43,10 @@
                     
                     <form action="#" class="needs-validation" method="POST">
                         <label for="etanol" class="form-label">Preço do Etanol:</label><br />
-                        <input type="text" class="form-control-lg" name="etanol" required onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.key === '.'" /><br />
+                        <input type="text" class="form-control-lg" name="etanol" pattern="[0-9].[0-9][0-9]" placeholder="Formato: 0.00" required /><br />
+                        <!--<input type="text" class="form-control-lg" name="etanol" required onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.key === '.'" /><br />-->
                         <label for="gasolina" class="form-label">Preço da Gasolina:</label><br />
-                        <input type="text" class="form-control-lg" name="gasolina" required onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.key === '.'" /><br /><br />
+                        <input type="text" class="form-control-lg" name="gasolina" pattern="[0-9].[0-9][0-9]" placeholder="Formato: 0.00" required /><br />
                         <input type="submit" class="btn btn-success" value="Calcular"/>
                     </form>
                 </div>

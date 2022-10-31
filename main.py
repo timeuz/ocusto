@@ -11,10 +11,8 @@ def calccomb():
     if request.method == 'POST':
         etanol = float(request.form['etanol'])
         gasolina = float(request.form['gasolina'])
-        # etanol = float(etanol)
-        # gasolina = float(gasolina)
-        
         result = (etanol / gasolina)
+        result = float(f'{result:.2f}')
     
     return render_template("index.html",
                           etanol = etanol,

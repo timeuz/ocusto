@@ -3,6 +3,10 @@ Aplicação em Python e Flask que calcula o melhor custo/benefício entre Gasoli
 
 [Dependendo da tecnologia do veículo, no entanto, esse percentual pode variar para 75%.](https://autopapo.uol.com.br/noticia/porcentagem-gasolina-ou-etanol/)
 
+## VEJA
+
+[O Custo][def]
+
 ## DONE
 
  - Migração PHP para Python/Flask <img src="static/images/done.svg" />
@@ -12,3 +16,5 @@ Aplicação em Python e Flask que calcula o melhor custo/benefício entre Gasoli
  - Config. Actions
  - Armazenar dados em DB
  - Otimização para mobile
+
+[def]: http://bcmaztdhls.us15.qoddiapp.com/

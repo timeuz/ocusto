@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import requests
 
 app = Flask(__name__, static_url_path='/projects/ocusto/static')
 
@@ -113,5 +114,23 @@ def calccerva():
 #                           comp = comp
 #                           )
 
+############################ API Methods #################################
+
+@app.route('/api/refri')
+def apicomb():
+    etanol = float(request.args.get('etanol'))
+    gasolina = float(request.args.get('gasolina'))
+    result = 0
+    comp = 0.73
+    if etanol != 0.0 and gasolina != 0.0:
+        result = (etanol / gasolina)
+        result = float(f'{result:.2f}')
+
+    return render_template("comb.html",
+                          etanol = etanol,
+                          gasolina = gasolina,
+                          result = result,
+                          comp = comp
+                          )
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

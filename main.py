@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request
-import requests
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__, static_url_path='/projects/ocusto/static')
 
@@ -122,15 +121,23 @@ def apicomb():
     gasolina = float(request.args.get('gasolina'))
     result = 0
     comp = 0.73
+
     if etanol != 0.0 and gasolina != 0.0:
         result = (etanol / gasolina)
         result = float(f'{result:.2f}')
 
-    return render_template("comb.html",
-                          etanol = etanol,
-                          gasolina = gasolina,
-                          result = result,
-                          comp = comp
-                          )
+    if result <= comp:
+        combustivel = "Etanol"
+    else:
+        combustivel = "Gasolina"
+
+    final_result = {
+        "etanol": etanol,
+        "gasolina": gasolina,
+        "razao": result,
+        "resultado": combustivel
+    }
+    return jsonify(final_result)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

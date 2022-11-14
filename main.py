@@ -30,7 +30,7 @@ def calccerva():
         "quinci": 0,
         "trezcc": 0,
         "trezci": 0,
-        "treznt": 0
+        "duzsen": 0
     }
     if request.method == 'POST':
         result = {
@@ -39,7 +39,7 @@ def calccerva():
             "quinci": float(request.form['quinci']),
             "trezcc": float(request.form['trezcc']),
             "trezci": float(request.form['trezci']),
-            "treznt": float(request.form['treznt'])
+            "duzsen": float(request.form['treznt'])
         }
 
         for x in result.keys():
@@ -54,8 +54,8 @@ def calccerva():
                     result[x] = result[x]/355
                 case "trezci":
                     result[x] = result[x]/350
-                case "treznt":
-                    result[x] = result[x]/300
+                case "duzsen":
+                    result[x] = result[x]/269
 
         sortedresults = sorted(result.items(), key=lambda x:x[1])
         sortedresults = dict(sortedresults)
@@ -77,8 +77,8 @@ def calccerva():
                 tipo = "Lata de 355ml"
             case "trezci":
                 tipo = "Lata de 350ml"
-            case "treznt":
-                tipo = "Lata de 300ml"
+            case "duzsen":
+                tipo = "Lata de 269ml"
 
         resultado = (sortedresults[listkeys[0]])
         resultado = (f'Sai mais barato comprar {tipo} com o valor de R${resultado:{4}.{3}f} por ML')
@@ -91,7 +91,7 @@ def calccerva():
             quinci = result["quinci"],
             trezcc = result["trezcc"],
             trezci = result["trezci"],
-            treznt = result["treznt"]
+            treznt = result["duzsen"]
         )
 
 # @app.route('/refri', methods=['GET', 'POST'])

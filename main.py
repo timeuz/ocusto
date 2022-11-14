@@ -115,7 +115,7 @@ def calccerva():
 
 ############################ API Methods #################################
 
-@app.route('/api/refri')
+@app.route('/api/combustivel')
 def apicomb():
     etanol = float(request.args.get('etanol'))
     gasolina = float(request.args.get('gasolina'))

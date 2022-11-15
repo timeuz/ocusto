@@ -2,6 +2,10 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__, static_url_path='/projects/ocusto/static')
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/combustivel', methods=['GET', 'POST'])
 def calccomb():
     etanol = 0

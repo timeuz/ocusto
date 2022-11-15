@@ -27,7 +27,7 @@ def calccerva():
     result = {
         "litrao": 0,
         "seisct": 0,
-        "quinci": 0,
+        "latao": 0,
         "trezcc": 0,
         "trezci": 0,
         "duzsen": 0
@@ -36,10 +36,10 @@ def calccerva():
         result = {
             "litrao": float(request.form['litrao']),
             "seisct": float(request.form['seisct']),
-            "quinci": float(request.form['quinci']),
+            "latao": float(request.form['latao']),
             "trezcc": float(request.form['trezcc']),
             "trezci": float(request.form['trezci']),
-            "duzsen": float(request.form['treznt'])
+            "duzsen": float(request.form['duzsen'])
         }
 
         for x in result.keys():
@@ -48,8 +48,8 @@ def calccerva():
                     result[x] = result[x]/1000
                 case "seisct":
                     result[x] = result[x]/600
-                case "quinci":
-                    result[x] = result[x]/550
+                case "latao":
+                    result[x] = result[x]/473
                 case "trezcc":
                     result[x] = result[x]/355
                 case "trezci":
@@ -71,8 +71,8 @@ def calccerva():
                 tipo = "Litrão"
             case "seisct":
                 tipo = "Garrafa de 600ml"
-            case "quinci":
-                tipo = "Garrafa de 550ml"
+            case "latao":
+                tipo = "Latão de 473ml"
             case "trezcc":
                 tipo = "Lata de 355ml"
             case "trezci":
@@ -88,10 +88,10 @@ def calccerva():
             resultado = resultado,
             litrao = result["litrao"],
             seisct = result["seisct"],
-            quinci = result["quinci"],
+            latao = result["latao"],
             trezcc = result["trezcc"],
             trezci = result["trezci"],
-            treznt = result["duzsen"]
+            duzsen = result["duzsen"]
         )
 
 # @app.route('/refri', methods=['GET', 'POST'])

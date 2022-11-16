@@ -10,11 +10,11 @@ Aplicação em Python e Flask que calcula o melhor custo/benefício entre Gasoli
 ## DONE
 
  - Migração PHP para Python/Flask <img src="static/images/done.svg" />
-
+ - Config. Actions <img src="static/images/done.svg" />
+ - Criação de página inicial  <img src="static/images/done.svg" />
 ## 2DO
- 
- - Config. Actions
+
  - Armazenar dados em DB
  - Otimização para mobile
 
-[def]: http://bcmaztdhls.us15.qoddiapp.com/
+[def]: http://go.timeu.com.br/ocusto

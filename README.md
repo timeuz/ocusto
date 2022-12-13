@@ -17,4 +17,4 @@ Aplicação em Python e Flask que calcula o melhor custo/benefício entre Gasoli
  - Armazenar dados em DB
  - Otimização para mobile
 
-[def]: http://go.timeu.com.br/ocusto
+[def]: https://timeu.com.br/ocusto

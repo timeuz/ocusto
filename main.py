@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 
-app = Flask(__name__, static_url_path='/projects/ocusto/static')
-
+app = Flask(__name__, static_url_path='/static')
+URLBASE="https://timeu.com.br/ocusto"
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', URLBASE=URLBASE)
 
 @app.route('/combustivel', methods=['GET', 'POST'])
 def calccomb():
@@ -22,7 +22,8 @@ def calccomb():
                           etanol = etanol,
                           gasolina = gasolina,
                           result = result,
-                          comp = comp
+                          comp = comp,
+                          URLBASE=URLBASE
                           )
 
 @app.route('/cerva', methods=['GET', 'POST'])
@@ -95,7 +96,8 @@ def calccerva():
             latao = result["latao"],
             trezcc = result["trezcc"],
             trezci = result["trezci"],
-            duzsen = result["duzsen"]
+            duzsen = result["duzsen"],
+            URLBASE=URLBASE
         )
 
 # @app.route('/refri', methods=['GET', 'POST'])
@@ -144,4 +146,4 @@ def apicomb():
     return jsonify(final_result)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run()
